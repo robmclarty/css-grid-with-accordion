@@ -1,0 +1,309 @@
+/* ========================= outer webpage styles ========================= */
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6ef;
+  margin-bottom: 500px;
+}
+
+.example-webpage-content {
+  font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  line-height: 1.5em;
+  margin-bottom: 50px;
+}
+
+.example-webpage-content h1 {
+  font-size: 70px;
+  line-height: 70px;
+}
+
+.example-container {
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 1086px;
+}
+
+/* ========================= card grid styles ========================= */
+
+/* ===== general ===== */
+.card-grid,
+.card-grid:before,
+.card-grid:after,
+.card-grid *,
+.card-grid *:before,
+.card-grid *:after  {
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.card-grid {
+  display: grid;
+  width: 100%;
+  grid-gap: 0;
+  grid-template-columns: repeat(4, 25%);
+  margin: 0;
+  padding: 0;
+  background-color: #e1e1db;
+  font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-kerning: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+/* ===== card/button ===== */
+.card {
+  margin: 0;
+  padding: 0;
+  min-height: 200px;
+  overflow: hidden;
+}
+
+.hidden,
+.card.hidden,
+.card-button.hidden,
+.card-details-body.hidden {
+  display: none;
+}
+
+.card > div {
+  height: 100%;
+}
+
+.card-button {
+  display: block;
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 15% 12% 3em 12%;
+  text-align: left;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+.card-button:hover {
+  text-decoration: none;
+}
+
+.card-text {
+  display: block;
+  margin: 0 0 1.8em 0;
+  line-height: 1.1em;
+  font-weight: bold;
+}
+
+.card-icon {
+  display: inline-block;
+  position: absolute;
+  bottom: 3em;
+  left: 12%;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  border: 2px solid #000;
+  width: 39px;
+  height: 39px;
+}
+
+.card-icon::after {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  font-family: 'Ionicons';
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 35px;
+  text-align: center;
+  content: '\f218';
+  text-decoration: none;
+  transform: rotate(0deg);
+  transform-origin: center center;
+}
+
+.card-icon.card-close::after {
+  transform: rotate(45deg);
+}
+
+
+/* ===== details ===== */
+.card-details {
+  display: none;
+  grid-column: 1 / 5;
+  grid-row: 2 / 3;
+  z-index: 10;
+}
+
+.card-details a {
+  color: black;
+}
+
+.card-details-body {
+  position: relative;
+  font-size: 1.5vw;
+  line-height: 1.5em;
+}
+
+.card-details-description {
+  display: inline-block;
+  width: 66%;
+  padding: 4em;
+}
+
+.card-details-description p:first-child {
+  margin-top: 0;
+}
+
+.card-details-sidebar {
+  display: block;
+  float: right;
+  width: 33%;
+  padding: 4em 4em 4em 0;
+}
+
+.card-details-sidebar h3 {
+  margin: 0;
+  font-size: 7.5vw;
+  line-height: 7.5vw;
+  font-weight: 500;
+  letter-spacing: -3px;
+}
+
+.card-details-sidebar p {
+  margin-top: 0;
+}
+
+.card-details-subtitle {
+  font-weight: 400;
+  font-size: 3vw;
+  letter-spacing: normal;
+}
+
+/* ===== background colors ===== */
+.card-yellow {
+  background-color: #fecc30;
+}
+.card-orange {
+  background-color: #fd9427;
+}
+.card-red {
+  background-color: #fc3d39;
+}
+.card-blue {
+  background-color: #60c9f8;
+}
+.card-green {
+  background-color: #53d869;
+}
+.card-purple {
+  background-color: #595ad4;
+}
+.card-pink {
+  background-color: #fc3259;
+}
+
+/* ===== media query overrides ===== */
+@media (min-width: 1087px) { /* static larger than 1086px */
+  .card-grid {
+    grid-template-columns: repeat(3, 33.3333%);
+  }
+  .card-details {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+  .card-text {
+    font-size: 42px;
+  }
+  .card-details-body {
+    font-size: 24px;
+  }
+  .card-details-sidebar h3 {
+    font-size: 80px;
+  }
+  .card-details-subtitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1086px) { /* 3 columns */
+  .card-grid {
+    grid-template-columns: repeat(3, 33.3333%);
+  }
+  .card-details {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+  .card-text {
+    font-size: 3.8vw;
+  }
+  .card-details-body {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 800px) { /* 2 columns */
+  .card-grid  {
+    grid-template-columns: repeat(2, 50%);
+  }
+  .card-details {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+  .card-text {
+    font-size: 5.5vw;
+  }
+  .card-details-body {
+    font-size: 3vw;
+  }
+  .card-details-description {
+    width: 100%;
+    padding: 3em;
+  }
+  .card-details-description p:last-child {
+    margin-bottom: 0;
+  }
+  .card-details-sidebar {
+    width: 100%;
+    position: relative;
+    padding: 0 3em 3em 3em;
+  }
+  .card-details-sidebar h3 {
+    font-size: 12vw;
+    line-height: 12vw;
+  }
+  .card-details-subtitle {
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+}
+
+@media (max-width: 520px) { /* 1 column */
+  .card-grid {
+    grid-template-columns: repeat(1, 100%);
+  }
+  .card-details {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  .card-button {
+    padding: 3em;
+  }
+  .card-text {
+    font-size: 35px;
+    margin-bottom: 2em;
+  }
+  .card-icon {
+    left: 3em;
+  }
+  .card-details-body {
+    font-size: 16px;
+  }
+  .card-details-description {
+    padding-top: 0;
+  }
+
+  /* NOTE: This is external to the actual grid styles and may be controlled by
+  the outer page styles wherever the grid is inserted. */
+  .example-container {
+    padding: 0;
+  }
+}
