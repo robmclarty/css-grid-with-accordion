@@ -4,7 +4,7 @@ A grid of rectangular "cards" which, when clicked, expand a corresponding block
 of detailed information whilst closing any already-opened details. When clicked
 a second time, the details are closed again.
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.png | width=800)
 
 
 ## Example Content
